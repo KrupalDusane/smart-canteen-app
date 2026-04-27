@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_bg">
+
+    <!-- Custom Header -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/nmims_red"
+            android:paddingHorizontal="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Weekly Mess Timetable"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Day Selector -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingVertical="12dp"
+        android:background="@color/white">
+        <LinearLayout
+            android:id="@+id/daySelectorLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp">
+            <!-- Buttons will be added here or statically -->
+            <Button android:id="@+id/btnMon" style="@style/DayButtonStyle" android:text="Mon" />
+            <Button android:id="@+id/btnTue" style="@style/DayButtonStyle" android:text="Tue" />
+            <Button android:id="@+id/btnWed" style="@style/DayButtonStyle" android:text="Wed" />
+            <Button android:id="@+id/btnThu" style="@style/DayButtonStyle" android:text="Thu" />
+            <Button android:id="@+id/btnFri" style="@style/DayButtonStyle" android:text="Fri" />
+            <Button android:id="@+id/btnSat" style="@style/DayButtonStyle" android:text="Sat" />
+            <Button android:id="@+id/btnSun" style="@style/DayButtonStyle" android:text="Sun" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Breakfast Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/breakfastIv"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/poha"
+                        android:scaleType="centerCrop"
+                        android:minHeight="120dp"
+                        app:shapeAppearanceOverlay="@style/RoundedCornerImage" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🍳 Breakfast"
+                            android:textColor="@color/nmims_red"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="08:00 AM - 10:00 AM"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:layout_marginBottom="8dp" />
+                        <TextView
+                            android:id="@+id/breakfastItemsTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loading..."
+                            android:textColor="#424242"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Lunch Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/lunchIv"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/thali"
+                        android:scaleType="centerCrop"
+                        android:minHeight="120dp"
+                        app:shapeAppearanceOverlay="@style/RoundedCornerImage" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🍛 Lunch"
+                            android:textColor="@color/nmims_red"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12:30 PM - 02:30 PM"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:layout_marginBottom="8dp" />
+                        <TextView
+                            android:id="@+id/lunchItemsTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loading..."
+                            android:textColor="#424242"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Dinner Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/dinnerIv"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/paneercrispy"
+                        android:scaleType="centerCrop"
+                        android:minHeight="120dp"
+                        app:shapeAppearanceOverlay="@style/RoundedCornerImage" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🍽 Dinner"
+                            android:textColor="@color/nmims_red"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="07:30 PM - 09:30 PM"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:layout_marginBottom="8dp" />
+                        <TextView
+                            android:id="@+id/dinnerItemsTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loading..."
+                            android:textColor="#424242"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

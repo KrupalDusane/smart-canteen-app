@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageCard"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/foodImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"
+                android:contentDescription="Food Image" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Popular Tag -->
+        <TextView
+            android:id="@+id/popularTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/imageCard"
+            android:layout_alignLeft="@id/imageCard"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_popular_tag"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="POPULAR"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imageCard"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/foodNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#212121" />
+
+            <TextView
+                android:id="@+id/foodCategoryTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Snacks"
+                android:textSize="12sp"
+                android:textColor="@color/grey_icon"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/foodPriceTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/nmims_red"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Quantity Controls -->
+        <LinearLayout
+            android:id="@+id/quantityControlLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/btnMinus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_quantity_btn"
+                android:src="@android:drawable/ic_delete"
+                app:tint="@color/nmims_red" />
+
+            <TextView
+                android:id="@+id/quantityTv"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#212121" />
+
+            <ImageButton
+                android:id="@+id/btnPlus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_quantity_btn"
+                android:src="@android:drawable/ic_input_add"
+                app:tint="@color/nmims_red" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="ADD"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/nmims_red"
+            android:textColor="@android:color/white"
+            app:cornerRadius="20dp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

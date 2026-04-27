@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/light_bg"
+    tools:context=".auth.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 1. TOP IMAGE BANNER (CLEAN) -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <ImageView
+                android:id="@+id/bannerIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/campus"
+                android:contentDescription="@string/campus_banner_desc" />
+
+            <!-- Subtler Overlay -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#44000000" />
+        </FrameLayout>
+
+        <!-- 2. ACCENT RED STRIP -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/nmims_red" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginTop="-50dp">
+
+            <!-- 3. LOGO IN CIRCULAR CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:cardCornerRadius="45dp"
+                app:cardElevation="10dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp">
+                <ImageView
+                    android:id="@+id/logoIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/logo"
+                    android:scaleType="centerInside"
+                    android:padding="12dp"
+                    android:contentDescription="@string/app_logo_desc"
+                    android:background="@color/white" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nmims_smart_canteen_login"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/campus_name"
+                android:textSize="14sp"
+                android:textColor="@color/grey_icon"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- 4. REFINED LOGIN CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- 5. INPUT FIELDS (GREY ACCENTS) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/sapIdLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/sap_id"
+                        app:startIconDrawable="@drawable/ic_person"
+                        app:startIconTint="@color/grey_icon"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginBottom="16dp"
+                        android:textColorHint="@color/grey_hint"
+                        app:hintTextColor="@color/grey_icon">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/sapIdInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="11"
+                            android:textColor="#212121" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/passwordLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        app:startIconDrawable="@drawable/ic_lock"
+                        app:startIconTint="@color/grey_icon"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/grey_icon"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginBottom="24dp"
+                        android:textColorHint="@color/grey_hint"
+                        app:hintTextColor="@color/grey_icon">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:textColor="#212121" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- 6. RED LOGIN BUTTON -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp">
+
+                        <Button
+                            android:id="@+id/loginBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/login"
+                            android:backgroundTint="@color/nmims_red"
+                            android:textColor="@android:color/white"
+                            app:cornerRadius="28dp"
+                            android:textStyle="bold"
+                            android:elevation="4dp" />
+
+                        <ProgressBar
+                            android:id="@+id/loginProgress"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:indeterminateTint="@color/white"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <!-- 7. RED FORGOT PASSWORD -->
+                    <TextView
+                        android:id="@+id/forgotPasswordTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/forgot_password_q"
+                        android:textColor="@color/nmims_red"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <!-- 8. SIGN UP LINK -->
+                    <TextView
+                        android:id="@+id/signUpTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/new_user_sign_up"
+                        android:textColor="@color/grey_icon"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- 9. ADMIN LOGIN BUTTON -->
+                    <Button
+                        android:id="@+id/adminLoginBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="@string/admin_login"
+                        android:backgroundTint="#D32F2F"
+                        android:textColor="@android:color/white"
+                        app:cornerRadius="28dp"
+                        android:textStyle="bold"
+                        android:elevation="4dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Nmims Canteen App</string>
+    <string name="nmims_smart_canteen_login">NMIMS Smart Canteen Login</string>
+    <string name="sap_id">SAP ID</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="change_password">Change Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="update_password">Update Password</string>
+    <string name="make_payment">Make Payment</string>
+    <string name="total_amount_prefix">Total: ₹</string>
+    <string name="scan_qr_to_pay">Scan QR to Pay</string>
+    <string name="confirm_payment_text">I have paid (Confirm)</string>
+    <string name="i_have_paid">I Have Paid</string>
+    <string name="upi_qr_description">UPI QR Code for Payment</string>
+    <string name="forgot_password_q">Forgot Password?</string>
+    <string name="campus_banner_desc">Campus Banner</string>
+    <string name="app_logo_desc">App Logo</string>
+    <string name="campus_name">NMIMS Shirpur Campus</string>
+    <string name="new_user_sign_up">New User? Sign Up</string>
+    <string name="admin_login">Admin Login</string>
+</resources>

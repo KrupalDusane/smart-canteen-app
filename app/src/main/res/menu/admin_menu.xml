@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_profile"
+        android:title="My Profile"
+        android:icon="@drawable/ic_person"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_all_orders"
+        android:title="All Orders"
+        android:icon="@drawable/ic_history"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_manage_menu"
+        android:title="Manage Menu"
+        android:icon="@drawable/ic_restaurant"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_change_password"
+        android:title="Change Password"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_logout"
+        app:showAsAction="never" />
+</menu>
